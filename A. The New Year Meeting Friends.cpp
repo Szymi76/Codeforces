@@ -5,6 +5,7 @@ using namespace std;
 int main()
 {
     int x1,x2,x3,distance=0;
+    
     cin>>x1>>x2>>x3;
     int tab[3] = {x1,x2,x3};
 
