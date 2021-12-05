@@ -19,4 +19,5 @@ int main()
     else {cout<<"Friendship is magic!^^";}
         
     return 0;
+    
 }
