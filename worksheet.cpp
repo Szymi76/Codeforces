@@ -2,21 +2,14 @@
 
 using namespace std;
 
+typedef unsigned long long ll;
+
 int main()
 {
-    int a,b;
-    cin>>a>>b;
-    
-    int pom;
+    int a,b,c;
+    cin>>a>>b>>c;
 
-    while(b!=0)
-    {
-        pom = b;
-        b = a%b;
-        a = pom;
-    }
-
-    cout<<a;
+    cout<<b+c;
 
     return 0;
 }
