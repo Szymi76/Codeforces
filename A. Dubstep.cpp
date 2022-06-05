@@ -32,14 +32,10 @@ string replaceWith(string str, string leave) {
 
 int main()
 {   
-    string str,replacer;
-
-    cout<<"Podaj zdanie z ktorego chcesz pozbyc sie niechcianych fraz: "<<endl;
+    string str;
     cin>>str;
-    cout<<"Podaj fraze ktora ma zostac usunieta ze zdania: "<<endl;
-    cin>>replacer;
 
-    string result = replaceWith(str,replacer);
+    string result = replaceWith(str,"WUB");
     cout<<result;
 
     return 0;

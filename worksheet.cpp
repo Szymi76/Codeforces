@@ -2,24 +2,51 @@
 
 using namespace std;
 
-typedef long long ll;
-
 int main()
 {
-    ll n,k,result;
-    cin>>n>>k;
+    string dane;
+    cin>>dane;
 
-    if(n%2 == 0) {
-        if(k < n/2+1) { result = 2*k-1  ;}
-        else { result = k - (n - k) ;}
+    int len = dane.length();
+    char tab[len];
+
+    // vector<char> v;
+
+    for(int i=0; i<len; i++) {
+        tab[i] = dane[i];
     }
-    else {
-        if(k <= n/2+1) { result = 2*k-1 ;}
-        else { result = k - (n + 1 - k) ;}
+    // for(int i=0; i<len; i++) {
+    //     if(dane[i] == 'W' && dane[i+1] == 'U' && )
+    // }
+
+    for(int i=0; i<len; i++) {
+        // cout<<"test";
+        string sub = dane.substr(i,3);
+        // cout<<sub<<endl;
+        if(sub == "WUB") {
+            dane.replace(i,3,"---");
+        }
+    }
+
+    dane+="-";
+    // string test = dane.substr(0,3);
+    cout<<dane;
+
+    
+    int count = 0;
+    string result = "";
+    for(int i=0; i<len+1; i++) {
+        if(dane[i] != '-') {
+            count++;
+        }
+        else {
+            result+=dane.substr(i-count, count);
+            if(count > 0) {result+=" ";}
+            count = 0;
+        }
     }
 
     cout<<result;
-
     return 0;
 }
 
