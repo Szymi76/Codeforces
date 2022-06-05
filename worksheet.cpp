@@ -2,14 +2,25 @@
 
 using namespace std;
 
-typedef unsigned long long ll;
+typedef long long ll;
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    ll n,k,result;
+    cin>>n>>k;
 
-    cout<<b+c;
+    if(n%2 == 0) {
+        if(k < n/2+1) { result = 2*k-1  ;}
+        else { result = k - (n - k) ;}
+    }
+    else {
+        if(k <= n/2+1) { result = 2*k-1 ;}
+        else { result = k - (n + 1 - k) ;}
+    }
+
+    cout<<result;
 
     return 0;
 }
+
+
