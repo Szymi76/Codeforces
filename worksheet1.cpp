@@ -2,47 +2,20 @@
 
 using namespace std;
 
-
-string replaceWith(string str, string leave) {
-    int len = str.length();
-    int l = leave.length();
-
-    string replacer = "";
-    for(int i=0; i<l; i++) { replacer+="-" ;}
-
-    for(int i=0; i<len; i++) {
-        string sub = str.substr(i,l);
-        if(sub == leave) { str.replace(i,l,replacer) ;}
-    }
-
-    str+="-";
-    int count = 0;
-    string result = "";
-
-    for(int i=0; i<len+1; i++) {
-        if(str[i] != '-') { count++ ;}
-        else {
-            if(count > 0) { result+=str.substr(i-count, count) + ' ' ;}
-            count = 0;
-        }
-    }
-
-    return result;
-}
-
 int main()
-{   
-    string str,replacer;
-
-    cout<<"Podaj zdanie z ktorego chcesz pozbyc sie niechcianych fraz: "<<endl;
-    cin>>str;
-    cout<<"Podaj fraze ktora ma zostac usunieta ze zdania: "<<endl;
-    cin>>replacer;
-
-    string result = replaceWith(str,replacer);
-    cout<<result;
-
+{
+    int n,m,ans;
+    scanf("%d%d",&n,&m);
+    int a[m],i;
+    for(i=0;i<m;i++){
+        scanf("%d",&a[i]);
+    }
+    sort(a,a+m);
+    ans=a[n-1]-a[0];
+    for(i=0;i<=m-n;i++){
+        if(a[i+n-1]-a[i]<ans)
+            ans=a[i+n-1]-a[i];
+    }
+    printf("%d\n",ans);
     return 0;
 }
-
-
