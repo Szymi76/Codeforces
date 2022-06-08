@@ -2,24 +2,19 @@
 
 using namespace std;
 
-bool resolve(string str) {
-    vector<char> c = {'h','e','l','l','o'};
-
-    for(int i=0; i<str.length(); i++) {
-        if(str[i] == c[0]) { c.erase(c.begin()) ;}
-        if(c.size() == 0) { return true ;}
-    }
-    
-    return false;
-}
-
 int main() {
 
-    string str;
-    cin>>str;
+    int n,a;
+    cin>>n;
 
-    if(resolve(str) == true) { cout<<"YES" ;}
-    else { cout<<"NO" ;}
+    vector<int> arr;
+
+    for(int i=0; i<n; i++) {
+        cin>>a;
+        arr.push_back(a);
+    }
+
+    // for(int i=0; i<n; i++) { cout<<arr[i] ;}
 
     return 0;
 }
