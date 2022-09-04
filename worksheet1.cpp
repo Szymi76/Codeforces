@@ -4,25 +4,29 @@ using namespace std;
 
 int main() {
 
-    string str, str1 = "", str2 = "", str3 = "", str4 = "";
-    cin>>str;
+    int n,queue;
+    cin>>n;
 
-    for(int i=0; i<str.length(); i++) {
-        str2+=toupper(str[i]);
-        str4+=tolower(str[i]);
-        if(i == 0) { 
-            str1+=tolower(str[i]);
-            str3+=toupper(str[i]);    
+    
+
+    // if(n < 6) { queue-- ;}
+
+    for(int i=1; i<n; i++) {
+        queue = i%5;
+        cout<<i<<" ";
+        switch(queue) {
+            case 1: { cout<<"Sheldon"; break;}
+            case 2: { cout<<"Leonard"; break;}
+            case 3: { cout<<"Penny"; break;}
+            case 4: { cout<<"Rajesh"; break;}
+            case 0: { cout<<"Howard"; break;}
         }
-        else { 
-            str1+=toupper(str[i]);
-            str3+=tolower(str[i]);
-        }
+        cout<<endl;
     }
 
-    if(str == str1) { cout<<str3 ;}
-    else if(str == str2) { cout<<str4 ;}
-    else { cout<<str ;}
+    // for(int i=1; i<n; i++) {
+    //     cout<<i%5<<endl;
+    // }
 
     return 0;
 }

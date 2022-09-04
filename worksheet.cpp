@@ -2,19 +2,23 @@
 
 using namespace std;
 
+typedef long long ll;
+
 int main() {
 
-    int n,a;
-    cin>>n;
-
-    vector<int> arr;
-
-    for(int i=0; i<n; i++) {
-        cin>>a;
-        arr.push_back(a);
+    set <int> s;
+    
+    for(int i=0; i<5; i++) {
+        int x;
+        cin>>x;
+        s.insert(x);    
     }
 
-    // for(int i=0; i<n; i++) { cout<<arr[i] ;}
+    set <int> ::iterator e;
+
+    e = s.find(3);
+
+    cout<<*e<<endl;
 
     return 0;
 }
